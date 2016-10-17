@@ -1,0 +1,16 @@
+body{
+	font-family: 'Titillium Web', sans-serif;
+	color: white;
+}
+.mid-page{
+	margin: 10%;
+	border: 10%;
+	padding: 10%;	
+}
+.purple-background{
+	background-color: #4E148C;
+	
+}
+.offWhite-background{
+	background-color: #EAF6FF;
+}
