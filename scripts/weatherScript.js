@@ -1,6 +1,16 @@
 $(document).ready(function() {
-	var clientLat= 35.2828;
-	var clientLon = -120.6596;
+	
+	var clientLat = 0;
+	var clientLon = 0;
+	if (Navigator.geolocation) {
+  		navigator.geolocation.getCurrentPosition(function(position) {
+    	clientLat = position.coords.latitude;
+    	clientLon= position.coords.longitude;
+  		});
+	}
+	console.log(clientLat);
+	console.log(clientLon);
+	
 	$("#location").empty().append("<h3 class = 'text-center '>Your Current Location </h3>")
 	$("#farenheit").on("click", function(){
 		$(".temperature").empty().append("<h3 class = 'text-center'>Temp in farenheit</h3>");
@@ -17,6 +27,7 @@ $(document).ready(function() {
 });*/
 
 var weatherJson = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+clientLat+"&lon="+clientLon, "APPID=77488f9dd9ff84cf5e598bdf84999e77", function(){
-	$("#jsonTest").html(JSON.stringify(weatherJson));
+	$("#temperature").html("<h3 class= 'text-center animated fadeIn'>" +"99"+"</h3>"); // CHANGE 99 TO VAR FOR TEMP
+	$("#location").html("<h3 class='text-center animated fadeIn'>"+ "Location_Name" + "</h3>"); //CHANGE LOCATION_NAME TO VAR FOR LOCATION
 	});
 });
