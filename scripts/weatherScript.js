@@ -5,13 +5,18 @@ $(document).ready(function() {
   		navigator.geolocation.getCurrentPosition(function(position) {
     	clientLat = position.coords.latitude;
     	clientLon = position.coords.longitude;
-    	$("#location").html("<h3 class = 'text-center '>"+clientLat+' '+clientLon+"</h3>")
-    	console.log(clientLat);
-		console.log(clientLon);
+    	
+  		var weatherJson = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+clientLat+"&lon="+clientLon, "APPID=77488f9dd9ff84cf5e598bdf84999e77", function(){
+			
+
+			$("#location").html("<h3 class = 'text-center '>"+clientLat+' '+clientLon+"</h3>");	
+			$("#temperature").html("<h3 class= 'text-center animated fadeIn'>" +"99"+"</h3>"); // CHANGE 99 TO VAR FOR TEMP
+			});
+  		console.log(weatherJson)	
   		});
   		}else{
   			alert("Failed to get position!");	
-  		}
+  	}
 	
 	
 	
@@ -29,8 +34,9 @@ $(document).ready(function() {
 	beforeSend: setHeader
 });*/
 
-var weatherJson = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+clientLat+"&lon="+clientLon, "APPID=77488f9dd9ff84cf5e598bdf84999e77", function(){
+/*var weatherJson = $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+clientLat+"&lon="+clientLon, "APPID=77488f9dd9ff84cf5e598bdf84999e77", function(){
 	$("#temperature").html("<h3 class= 'text-center animated fadeIn'>" +"99"+"</h3>"); // CHANGE 99 TO VAR FOR TEMP
 	$("#location").html("<h3 class='text-center animated fadeIn'>"+ "Location_Name" + "</h3>"); //CHANGE LOCATION_NAME TO VAR FOR LOCATION
-	});
+	});*/
+;
 });
