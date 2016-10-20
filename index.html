@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+ 	  <title>Your Local Weather by Jordan Henderson</title>
+ 	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200" rel="stylesheet">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/weatherScript.js"> </script>
+  </head>
+<body class="offWhite-background">
+  <div class="container-fluid mid-page purple-background">
+    <div class="row">
+      <div class ="col-xs-12 center-block">
+        <h1 class="text-center animated zoomIn"> Your Local Weather</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="location" class="center-block">
+          <h3 class="text-center animated fadeIn"> Location </h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="temperature" class="center-block temperature">
+          <h3 class="text-center animated fadeIn"> Temperature </h3>
+        </div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class ="col-xs-12">
+        <div id="weatherIcon" class= "weatherIcon">
+          <h3 class="text-center animated fadeIn"> Weather Icon <i class="fa fa-info"></i></h3>
+        </div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-xs-12">
+        <h3 class = "text-center descriptor animated fadeIn" id="descriptor"> Weather Descriptor </h3>      
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-6" >
+        <button id="farenheit" type="button" class="btn btn-lg btn-primary center-block farenheit animated zoomIn">Farenheit </button>
+      </div>
+      <div class="col-xs-6" >
+        <button id="celsius" type="button" class="btn btn-lg btn-primary center-block celsius animated zoomIn">Celsius</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class = "text-center jsonTest" id="jsonTest">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
