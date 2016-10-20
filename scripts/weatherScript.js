@@ -13,8 +13,7 @@ $(document).ready(function() {
   		navigator.geolocation.getCurrentPosition(function(position) {
     	clientLat = position.coords.latitude;
     	clientLon = position.coords.longitude;
-    	//FIX MEEE
-  		$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+clientLat+"&lon="+clientLon, "APPID=77488f9dd9ff84cf5e598bdf84999e77", function(weatherJson){
+  		$.getJSON("https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?lat="+clientLat+"&lon="+clientLon, "APPID=77488f9dd9ff84cf5e598bdf84999e77", function(weatherJson){
 			console.log(Object.keys(weatherJson));
 			tempK = weatherJson.main.temp;
 			tempF = Math.round(tempK*1.8 - 459.67);
